@@ -1,0 +1,21 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Scanner {
+	private final String source;
+	private final List<Token> tokens = new ArrayList();
+	
+	public Scanner(String source) {
+		this.source = source;
+	}
+	
+	public List<Token> scanTokens() {
+		while(!isAtEnd) {
+			start = current;
+			scanToken();
+		}
+		
+		tokens.add(new Token(TokenType.EOF, "", null, line));
+		return tokens;
+	}
+}

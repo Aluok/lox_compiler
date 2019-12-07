@@ -1,0 +1,30 @@
+
+abstract public class Expr {
+	static class Binary extends Expr {
+		final Expr left;
+		final Expr right;
+		final Token operator;
+		
+		Binary(Expr left, Token operator, Expr right) {
+			this.left = left;
+			this.right = right;
+			this.operator = operator;
+		}
+	}
+	
+	static class Literal extends Expr {
+		final Token token;
+		
+		Literal(Token token) {
+			this.token = token;
+		}
+	}
+	static class Unary extends Expr {
+		final Token token;
+		final Expr expr;
+		Unary(Token token, Expr expr) {
+			this.token = token;
+			this.expr = expr;
+		}
+	}
+}

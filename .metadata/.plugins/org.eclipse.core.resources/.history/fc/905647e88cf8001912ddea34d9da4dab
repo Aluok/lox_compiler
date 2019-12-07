@@ -1,0 +1,12 @@
+
+public class Scanner {
+	private final String source;
+	
+	public Scanner(String source) {
+		this.source = source;
+	}
+	
+	public Token[] scanTokens() {
+		return new Token[0];
+	}
+}

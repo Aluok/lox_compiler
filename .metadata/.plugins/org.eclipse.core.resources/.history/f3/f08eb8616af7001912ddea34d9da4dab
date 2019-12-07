@@ -1,0 +1,6 @@
+
+public class Scanner {
+	public Token[] scanToken(String code) {
+		
+	}
+}

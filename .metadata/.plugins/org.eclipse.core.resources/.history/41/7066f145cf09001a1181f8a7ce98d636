@@ -1,0 +1,35 @@
+package com.craftingInterpreters.lox;
+
+import com.craftingInterpreters.lox.Expr.Binary;
+import com.craftingInterpreters.lox.Expr.Grouping;
+import com.craftingInterpreters.lox.Expr.Literal;
+import com.craftingInterpreters.lox.Expr.Unary;
+import com.craftingInterpreters.lox.Expr.Visitor;
+
+public class Interpreter implements Visitor<Object> {
+
+	@Override
+	public Object visitBinaryExpr(Binary expr) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object visitGroupingExpr(Grouping expr) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object visitLiteralExpr(Literal expr) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object visitUnaryExpr(Unary expr) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

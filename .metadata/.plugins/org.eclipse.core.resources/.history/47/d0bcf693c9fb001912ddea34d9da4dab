@@ -1,0 +1,13 @@
+package com.craftingInterpreters.tools;
+
+public class GenerateAst {
+
+	public static void main(String[] args) {
+		if (args.length != 1) {
+			System.out.println("Usage: generate_ast <output_directory>");
+			System.exit(1);
+		}
+		
+	}
+
+}

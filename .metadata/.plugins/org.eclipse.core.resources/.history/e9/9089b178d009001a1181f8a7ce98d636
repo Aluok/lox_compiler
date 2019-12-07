@@ -1,0 +1,53 @@
+package com.craftingInterpreters.lox;
+
+import com.craftingInterpreters.lox.Expr.Binary;
+import com.craftingInterpreters.lox.Expr.Grouping;
+import com.craftingInterpreters.lox.Expr.Literal;
+import com.craftingInterpreters.lox.Expr.Unary;
+import com.craftingInterpreters.lox.Expr.Visitor;
+import com.craftingInterpreters.lox.TokenType.*;
+
+public class Interpreter implements Visitor<Object> {
+
+	@Override
+	public Object visitBinaryExpr(Binary expr) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object visitGroupingExpr(Grouping expr) {
+		// TODO Auto-generated method stub
+		return evaluate(expr.expr);
+	}
+
+	@Override
+	public Object visitLiteralExpr(Literal expr) {
+		return expr.value;
+	}
+
+	@Override
+	public Object visitUnaryExpr(Unary expr) {
+		Object right = evaluate(expr.right);
+		
+		switch(expr.operator.type) {
+		case MINUS:
+			return -(double)right;
+		case BANG:
+			return !isTruthy(right);
+		}
+		//Unreachable
+		return null;
+	}
+	
+	public Object evaluate(Expr expr) {
+		return expr.accept(this);
+	}
+	
+	private boolean isTruthy(Object obj) {
+		if(obj == null) return false;
+		if(obj instanceof Boolean) return (Boolean)obj;
+		return true;
+	}
+
+}

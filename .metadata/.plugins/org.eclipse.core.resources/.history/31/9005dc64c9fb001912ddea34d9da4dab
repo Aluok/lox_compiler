@@ -1,0 +1,11 @@
+package com.craftingInterpreters.tools;
+
+public class GenerateAst {
+
+	public static void main(String[] args) {
+		if (args.length != 1) {
+			
+		}
+	}
+
+}

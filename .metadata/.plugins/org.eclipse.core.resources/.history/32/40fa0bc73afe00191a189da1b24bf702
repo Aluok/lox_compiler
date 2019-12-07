@@ -1,0 +1,8 @@
+package com.craftingInterpreters.lox;
+
+public class AstPrinter implements Expr.Visitor<String>{
+
+	String print(Expr expr) {
+		expr.accept(this);
+	}
+}
